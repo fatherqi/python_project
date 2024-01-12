@@ -75,14 +75,23 @@ while True:
         name = input('请输入您想修改的学生名字:')
         for students in student:
             if students['name'] == name:
-               chinese = int(input ('请输入学生的语文成绩:'))
-               math = int(input ('请输入学生的数学成绩:'))
-               english = int(input ('请输入学生的英语成绩:'))
-               total = chinese + math + english 
-               students['语文'] = chinese
-               students['数学'] = math
-               students['英语'] = english
-               students['total'] = total              
+               chinese = input ('请输入学生的语文成绩:')
+               if chinese:
+                  students['语文'] = int(chinese) 
+                
+               math = input ('请输入学生的数学成绩:')
+               if math:
+                  students['数学'] = int(math)
+
+               english = input ('请输入学生的英语成绩:')
+               if english:
+                  students['英语'] = int(english)   
+
+               total = students['语文'] + students['数学'] + students['英语']
+               
+               students['total'] = total  
+
+               print('您已修改成功')            
                break 
         else:
             print('您输入的名字有误')           
