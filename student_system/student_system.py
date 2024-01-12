@@ -26,7 +26,7 @@ print (info)
 #    {'name':'张三','语文':89,'数学':98,'英语':97,'总分':284},
 #    {'name':'李四','语文':89,'数学':98,'英语':97,'总分':284} 
 #]
-with open('student.json',mode = 'r') as f:
+with open('student_system/student.json',mode = 'r') as f:
     text = f.read()
 
 student = json.loads(text)
