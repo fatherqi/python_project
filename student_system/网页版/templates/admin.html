@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Page Title</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+</head>
+<body>
+<table class="table" style="width: 600px; margin: 100px auto;">
+    <thead>
+      <tr>
+        <th scope="col">姓名</th>
+        <th scope="col">语文</th>
+        <th scope="col">数学</th>
+        <th scope="col">英语</th>
+        <th scope="col">总分</th>
+        <th scope="col">操作</th>
+      </tr>
+    </thead>
+    <tbody>
+    <!--
+        需要将python对象显示到浏览器上，模版语法
+        jinja2(flask) numjucks(javascript)
+        jinjia2可以直接在html写python的逻辑
+    -->
+      {% for stu in students %}
+          <tr>
+            <td>{{ stu.name  }}</td>
+            <td>{{ stu.语文   }}</td>
+            <td>{{ stu.数学   }}</td>
+            <td>{{ stu.英语   }}</td>
+            <td>{{ stu.total }}</td>
+            <td>
+                <a href="/delete?name={{stu.name}}">删除</a>
+                <a href="/modify?name={{stu.name}}">修改</a>
+            </td>
+          </tr>
+      {% endfor %}
+    </tbody>
+</table>
+
+<div class="container" style="width: 600px;margin: 10px auto">
+    <div class="row">
+      <div class="col-4">
+        <a href="/add">新增学员信息</a>
+      </div>
+    </div>
+</div>
+
+
+</body>
+</html>

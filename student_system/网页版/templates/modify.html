@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增数据</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+</head>
+
+<body>
+<form style="width: 400px;margin: 100px auto;" method="post">
+<!--
+  当表单的 method 属性设置为 post 时，表单数据将通过HTTP请求的消息体（body）发送到服务器。
+  这使得可以发送大量的数据，且不会暴露在URL中。通常在处理用户登录、提交表单等包含敏感信息的情况下使用。
+-->
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">学生姓名</label>
+      <input type="text" 
+             class="form-control" 
+             id="username" 
+             name="username"
+             value="{{student.name}}"
+             >
+             
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">语文</label>
+      <input type="text" 
+             class="form-control" 
+             id="语文"
+             name="语文"
+             value="{{student.语文}}"
+             >
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">数学</label>
+        <input type="text" 
+               class="form-control" 
+               id="数学"
+               name="数学"
+               value="{{student.数学}}"
+               >
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">英语</label>
+        <input type="text" 
+               class="form-control" 
+               id="英语"
+               name="英语"
+               value="{{student.英语}}"
+               >
+    </div>
+
+    <button type="submit" class="btn btn-primary">修改</button>
+</form>
+</body>
+</html>
